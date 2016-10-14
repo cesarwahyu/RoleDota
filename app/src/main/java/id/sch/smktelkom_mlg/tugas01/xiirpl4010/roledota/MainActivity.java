@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity
 {
     EditText etNama;
     Button bOk;
-    RadioButton rbR, rbD;
+    RadioGroup rgTeam;
     TextView tvHasil;
 
     @Override
@@ -42,15 +42,31 @@ public class MainActivity extends AppCompatActivity
 
     private void doClick()
     {
+        String hasil = null;
+        String nama = etNama.getText().toString();
 
+        if (rgTeam.getCheckedRadioButtonId() != -1)
+        {
+            RadioButton rb = (RadioButton)
+                    findViewById(rgTeam.getCheckedRadioButtonId());
+            hasil = rb.getText().toString();
+
+            if (hasil == null)
+            {
+                tvHasil.setText("Belum Memilih Team");
+            }
+            else
+            {
+                tvHasil.setText("Nama Anda : " + nama + "\nTeam Anda : " + hasil);
+            }
+        }
     }
 
     private void doProses()
     {
         String nama = etNama.getText().toString();
 
-        rbR = (RadioButton) findViewById(R.id.radioButtonR);
-        rbD = (RadioButton) findViewById(R.id.radioButtonD);
+        rgTeam = (RadioGroup) findViewById(R.id.radioGroupTeam);
 
         tvHasil.setText(nama);
     }
