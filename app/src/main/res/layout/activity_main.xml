@@ -48,7 +48,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="18dp"
         android:id="@+id/textView2"
-        android:textSize="20sp"
+        android:textSize="15sp"
         android:textStyle="normal|bold"
         />
 
@@ -79,33 +79,45 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/textView3"
-        android:textSize="20sp"
+        android:textSize="15sp"
         android:textStyle="normal|bold"
         android:layout_marginTop="10dp"
         />
+
     <CheckBox
         android:text="Carry"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/checkBox" />
+        android:id="@+id/cbCarry" />
+
     <CheckBox
         android:text="Support"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/checkBox3"
+        android:id="@+id/cbSupport"
         />
 
     <CheckBox
         android:text="Offlaner"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/checkBox2"
+        android:id="@+id/cbOfflaner"
+        />
+
+    <TextView
+        android:text="Type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView4"
+        android:textSize="15sp"
+        android:textStyle="normal|bold"
+        android:layout_marginTop="10dp"
         />
 
     <Spinner
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="14dp"
+        android:layout_marginTop="10dp"
         android:id="@+id/spinner" />
 
     <Button
@@ -120,10 +132,10 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        tools:text="Hasil"
         android:id="@+id/textViewHasil"
         android:layout_marginTop="10dp"
         android:text="Hasil"
-        tools:text="Hasil"
         android:textAlignment="center" />
 
 

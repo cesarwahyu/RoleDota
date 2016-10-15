@@ -19,6 +19,7 @@ public class MainActivity extends AppCompatActivity
     EditText etNama;
     Button bOk;
     RadioGroup rgTeam;
+    CheckBox cbC, cbS, cbO;
     TextView tvHasil;
 
     @Override
@@ -28,8 +29,14 @@ public class MainActivity extends AppCompatActivity
 
         etNama = (EditText) findViewById(R.id.editTextNama);
         bOk = (Button) findViewById(R.id.buttonOk);
+
+        cbC = (CheckBox) findViewById(R.id.cbCarry);
+        cbS = (CheckBox) findViewById(R.id.cbSupport);
+        cbO = (CheckBox) findViewById(R.id.cbOfflaner);
+
         tvHasil = (TextView) findViewById(R.id.textViewHasil);
-        bOk.setOnClickListener(new View.OnClickListener()
+
+        findViewById(R.id.buttonOk).setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View view)
@@ -44,23 +51,33 @@ public class MainActivity extends AppCompatActivity
     {
         String hasil = null;
         String nama = etNama.getText().toString();
+        String job = "\n";
+
+        int startlen = job.length();
+        if (cbC.isChecked()) job+=cbC.getText()+"\n";
+        if (cbS.isChecked()) job+=cbS.getText()+"\n";
+        if (cbO.isChecked()) job+=cbO.getText()+"\n";
+
+        if (job.length()==startlen) job+="Kosong";
 
         if (rgTeam.getCheckedRadioButtonId() != -1)
         {
             RadioButton rb = (RadioButton)
                     findViewById(rgTeam.getCheckedRadioButtonId());
             hasil = rb.getText().toString();
+        }
 
             if (hasil == null)
             {
-                tvHasil.setText("Belum Memilih Team");
+                tvHasil.setText("Data Belum Terisi Dengan Benar");
             }
             else
             {
-                tvHasil.setText("Nama Anda : " + nama + "\nTeam Anda : " + hasil);
+                tvHasil.setText("Nama Anda : " + nama + "\nTeam Anda : " + hasil + "\nJob Anda :" + job);
             }
+
+
         }
-    }
 
     private void doProses()
     {
