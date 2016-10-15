@@ -16,7 +16,7 @@
 
     <TextView
         android:text="@string/form_team"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/textView"
         android:textStyle="normal|bold"
@@ -29,9 +29,9 @@
         android:id="@+id/imageView"
         android:contentDescription=""
         tools:ignore="ContentDescription"
-        android:layout_width="100dp"
+        android:layout_width="match_parent"
         android:layout_height="100dp"
-         />
+        android:baselineAlignBottom="false" />
 
     <EditText
         android:layout_width="match_parent"
@@ -105,7 +105,7 @@
         />
 
     <TextView
-        android:text="Type"
+        android:text="Hero"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/textView4"
@@ -118,7 +118,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:id="@+id/spinner" />
+        android:entries="@array/type"
+        android:id="@+id/spinnerType" />
 
     <Button
         android:text="Button"
@@ -135,10 +136,7 @@
         tools:text="Hasil"
         android:id="@+id/textViewHasil"
         android:layout_marginTop="10dp"
-        android:text="Hasil"
         android:textAlignment="center" />
-
-
 
 
 </LinearLayout>

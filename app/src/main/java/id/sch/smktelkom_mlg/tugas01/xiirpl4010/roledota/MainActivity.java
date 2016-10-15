@@ -20,6 +20,7 @@ public class MainActivity extends AppCompatActivity
     Button bOk;
     RadioGroup rgTeam;
     CheckBox cbC, cbS, cbO;
+    Spinner spType, spHero;
     TextView tvHasil;
 
     @Override
@@ -33,6 +34,8 @@ public class MainActivity extends AppCompatActivity
         cbC = (CheckBox) findViewById(R.id.cbCarry);
         cbS = (CheckBox) findViewById(R.id.cbSupport);
         cbO = (CheckBox) findViewById(R.id.cbOfflaner);
+
+        spType = (Spinner) findViewById(R.id.spinnerType);
 
         tvHasil = (TextView) findViewById(R.id.textViewHasil);
 
@@ -73,7 +76,7 @@ public class MainActivity extends AppCompatActivity
             }
             else
             {
-                tvHasil.setText("Nama Anda : " + nama + "\nTeam Anda : " + hasil + "\nJob Anda :" + job);
+                tvHasil.setText("Nama Anda : " + nama + "\nTeam Anda : " + hasil + "\nJob Anda :" + job + " Hero Anda : " + spType.getSelectedItem().toString());
             }
 
 
